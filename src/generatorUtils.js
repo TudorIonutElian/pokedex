@@ -1,8 +1,14 @@
+import gameConfig from "./config";
+
 export function generateRandomPokemonsNumber () {
     let number_of_pokemons = Math.floor(Math.random() * 10);
 
-    if (number_of_pokemons < 4) {
-        number_of_pokemons = 4;
+    if (number_of_pokemons < gameConfig.minimumPokemons) {
+        number_of_pokemons = gameConfig.minimumPokemons;
+    }
+
+    if (number_of_pokemons > gameConfig.maximumPokemons) {
+        number_of_pokemons = gameConfig.maximumPokemons;
     }
 
     return number_of_pokemons;

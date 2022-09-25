@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Pokecard from "./Pokecard";
 import "./Pokedex.css"
 import {generateRandomPokemonsNumber, generateRandomPokemonsRound} from "./generatorUtils";
+import PokedexRound from "./PokedexRound";
 
 class Pokedex extends Component {
      constructor() {
@@ -11,8 +12,14 @@ class Pokedex extends Component {
 
     componentWillMount(){
         const pokePerRound = generateRandomPokemonsNumber();
-        const pokemons_round1 = generateRandomPokemonsRound(pokePerRound, this.props.pokemon_names, this.props.pokemon_types);
-        const pokemons_round2 = generateRandomPokemonsRound(pokePerRound, this.props.pokemon_names, this.props.pokemon_types);
+        const pokemons_round1 = {
+            id: 1,
+            data: generateRandomPokemonsRound(pokePerRound, this.props.pokemon_names, this.props.pokemon_types)
+        };
+        const pokemons_round2 = {
+            id: 2,
+            data: generateRandomPokemonsRound(pokePerRound, this.props.pokemon_names, this.props.pokemon_types)
+        };
 
         this.setState(
             {
@@ -78,33 +85,10 @@ class Pokedex extends Component {
     }
 
     render() {
-         console.log(this.state)
         return (
             <div className="Pokedex">
-                <h1>Pokedex</h1>
-                <div className="Pokedex_line">
-                    {this.state.pokemons_round1.map(pokemon => (
-                        <Pokecard
-                            id={pokemon.id}
-                            name={pokemon.name}
-                            type={pokemon.type}
-                            exp={pokemon.base_experience}
-                            key={pokemon.id}
-                        />
-                    ))}
-                </div>
-
-                <div className="Pokedex_line">
-                    {this.state.pokemons_round2.map(pokemon => (
-                        <Pokecard
-                            id={pokemon.id}
-                            name={pokemon.name}
-                            type={pokemon.type}
-                            exp={pokemon.base_experience}
-                            key={pokemon.id}
-                        />
-                    ))}
-                </div>
+                <PokedexRound pokemons={this.state.pokemons_round1}/>
+                <PokedexRound pokemons={this.state.pokemons_round2}/>
             </div>
         );
     }
