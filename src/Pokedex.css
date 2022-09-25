@@ -23,14 +23,14 @@
 }
 .Pokedex_round_score_win{
 	display: inline-block;
-	background-color: #2ecc71;
+	background-color: #157ecd;
 	padding: 5px;
 	border-radius: 5px;
 	color: #fff;
 	margin: 0 10px;
 }
 .Pokedex_round_score_win_text{
-	color: #2ecc71;
+	color: #157ecd;
 }
 
 .Pokedex_round_score_lose{
@@ -46,7 +46,7 @@
 	color: #e74c3c;
 }
 .Pokedex_line_card_border_green{
-	border: 2px solid #0ade39;
+	border: 2px solid #157ecd;
 }
 
 .Pokedex_line_card_border_red{

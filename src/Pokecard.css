@@ -6,6 +6,7 @@
 	text-align: center;
 	background-color: white;
 	border-radius: 10px;
+	min-height: 250px;
 }
 
 .Pokecard-data {
