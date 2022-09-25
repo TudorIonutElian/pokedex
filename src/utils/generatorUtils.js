@@ -17,7 +17,8 @@ export function generateRandomPokemonsNumber () {
 export function generateRandomPokemonsRound(totalPokemonsPerRound, pokemonNames, pokemonTypes) {
     let data_round = {
         pokemons: [],
-        score: 0
+        score: 0,
+        bestScore: 0
     };
 
     for (let i = 0; i < totalPokemonsPerRound; i++) {
@@ -31,10 +32,12 @@ export function generateRandomPokemonsRound(totalPokemonsPerRound, pokemonNames,
             type: pokemonTypes[randomTypeInteger],
             base_experience: randomNameInteger + randomTypeInteger
         }
-        data_round.score += pokemon.base_experience
+        data_round.score += pokemon.base_experience;
+
+        if (data_round.bestScore < pokemon.base_experience) {
+            data_round.bestScore = pokemon.base_experience;
+        }
         data_round.pokemons.push(pokemon)
     }
-
-    console.log(data_round)
     return data_round;
 }

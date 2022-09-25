@@ -1,0 +1,16 @@
+.Pokedex_line_card_border_green_best_series,
+.Pokedex_line_card_border_red_best_series {
+    padding: 8px;
+    margin: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 8px;
+}
+.Pokedex_line_card_border_green_best_series {
+    background-color: #4caf50;
+}
+
+.Pokedex_line_card_border_red_best_series {
+    background-color: #e51528;
+}

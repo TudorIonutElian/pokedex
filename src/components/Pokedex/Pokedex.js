@@ -88,8 +88,16 @@ class Pokedex extends Component {
     render() {
         return (
             <div className="Pokedex">
-                <PokedexRound data={this.state.data_round1.data} winnerScore={this.state.winnerScore}/>
-                <PokedexRound data={this.state.data_round2.data} winnerScore={this.state.winnerScore}/>
+                <PokedexRound
+                    data={this.state.data_round1.data}
+                    winnerScore={this.state.winnerScore}
+                    bestScore={this.state.data_round1.data.bestScore}
+                />
+                <PokedexRound
+                    data={this.state.data_round2.data}
+                    winnerScore={this.state.winnerScore}
+                    bestScore={this.state.data_round2.data.bestScore}
+                />
             </div>
         );
     }
