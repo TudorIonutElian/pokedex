@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Pokecard from "./Pokecard";
+import Pokecard from "../Pokecard/Pokecard";
 import "./Pokedex.css"
-import {generateRandomPokemonsNumber, generateRandomPokemonsRound} from "./generatorUtils";
-import PokedexRound from "./PokedexRound";
+import {generateRandomPokemonsNumber, generateRandomPokemonsRound} from "../../utils/generatorUtils";
+import PokedexRound from "../PokedexRound/PokedexRound";
 
 class Pokedex extends Component {
      constructor() {
