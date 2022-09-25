@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Pokecard from "./Pokecard";
-import { isWinnerPokedexRound } from "./designUtils";
+import Pokecard from "../Pokecard/Pokecard";
+import { isWinnerPokedexRound } from "../../utils/designUtils";
 
 class PokedexRound extends Component {
     constructor() {

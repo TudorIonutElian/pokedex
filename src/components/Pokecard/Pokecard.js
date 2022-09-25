@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Pokecard.css"
-import gameConfig from "./config/config";
+import gameConfig from "../../config/config";
 
 
 class Pokecard extends Component{

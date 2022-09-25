@@ -1,4 +1,4 @@
-import gameConfig from "./config/config";
+import gameConfig from "../config/config";
 
 export function isWinnerPokedexRound (roundScore, winnerScore) {
     const roundIsWinner = roundScore === winnerScore;
