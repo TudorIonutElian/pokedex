@@ -14,3 +14,10 @@
 .Pokedex-loser {
 	color: #e91e63;
 }
+.Pokedex_line{
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
