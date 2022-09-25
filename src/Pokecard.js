@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import "./Pokecard.css"
-const POKE_API = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+import gameConfig from "./config/config";
 
 
 class Pokecard extends Component{
     render() {
-        let imgSrc = `${POKE_API}${this.props.id}.png`;
+        let imgSrc = `${gameConfig.POKE_API}${this.props.id}.png`;
         return (
             <div className={"Pokecard " + this.props.cssClass}>
                 <h1>{this.props.name}</h1>
