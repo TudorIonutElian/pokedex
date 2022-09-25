@@ -12,19 +12,20 @@ class Pokedex extends Component {
 
     componentWillMount(){
         const pokePerRound = generateRandomPokemonsNumber();
-        const pokemons_round1 = {
+        const data_round1 = {
             id: 1,
             data: generateRandomPokemonsRound(pokePerRound, this.props.pokemon_names, this.props.pokemon_types)
         };
-        const pokemons_round2 = {
+        const data_round2 = {
             id: 2,
             data: generateRandomPokemonsRound(pokePerRound, this.props.pokemon_names, this.props.pokemon_types)
         };
 
         this.setState(
             {
-                pokemons_round1,
-                pokemons_round2
+                data_round1,
+                data_round2,
+                winnerScore: data_round1.data.score > data_round2.data.score ? data_round1.data.score: data_round2.data.score
             }
         )
     }
@@ -87,8 +88,8 @@ class Pokedex extends Component {
     render() {
         return (
             <div className="Pokedex">
-                <PokedexRound pokemons={this.state.pokemons_round1}/>
-                <PokedexRound pokemons={this.state.pokemons_round2}/>
+                <PokedexRound data={this.state.data_round1.data} winnerScore={this.state.winnerScore}/>
+                <PokedexRound data={this.state.data_round2.data} winnerScore={this.state.winnerScore}/>
             </div>
         );
     }

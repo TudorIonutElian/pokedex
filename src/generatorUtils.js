@@ -15,7 +15,10 @@ export function generateRandomPokemonsNumber () {
 }
 
 export function generateRandomPokemonsRound(totalPokemonsPerRound, pokemonNames, pokemonTypes) {
-    let pokemons_round = [];
+    let data_round = {
+        pokemons: [],
+        score: 0
+    };
 
     for (let i = 0; i < totalPokemonsPerRound; i++) {
         let randomInteger = Math.floor(Math.random() * 100)
@@ -28,8 +31,10 @@ export function generateRandomPokemonsRound(totalPokemonsPerRound, pokemonNames,
             type: pokemonTypes[randomTypeInteger],
             base_experience: randomNameInteger + randomTypeInteger
         }
-        pokemons_round.push(pokemon)
+        data_round.score += pokemon.base_experience
+        data_round.pokemons.push(pokemon)
     }
 
-    return pokemons_round;
+    console.log(data_round)
+    return data_round;
 }
