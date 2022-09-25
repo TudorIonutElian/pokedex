@@ -9,6 +9,7 @@ class PokedexRound extends Component {
     }
 
     render() {
+        const bestRoundScore = this.props.bestScore;
         return (
             <div className="Pokedex_round">
                 <h2>
@@ -31,6 +32,7 @@ class PokedexRound extends Component {
                             exp={pokemon.base_experience}
                             key={pokemon.id}
                             cssClass={isWinnerPokedexRound(this.props.data.score, this.props.winnerScore).css_class_border}
+                            isBestScorerOfRound={ pokemon.base_experience === this.props.bestScore }
                         />
                     ))}
                 </div>
