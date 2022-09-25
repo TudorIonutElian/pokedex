@@ -1,4 +1,4 @@
-import gameConfig from "./config";
+import gameConfig from "./config/config";
 
 export function generateRandomPokemonsNumber () {
     let number_of_pokemons = Math.floor(Math.random() * 10);
